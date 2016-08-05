@@ -17,8 +17,8 @@ RUN apk add --no-cache --virtual build-essential \
 
 COPY index.html /slides/
 
-RUN rm /reveal.js/index.html &&\
-    ln -s /slides/index.html /reveal.js/index.html
+RUN rm /reveal.js/index.html
+RUN ln -s /slides/index.html /reveal.js/index.html
 
 COPY Gruntfile.js /reveal.js/
 

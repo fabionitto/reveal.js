@@ -95,7 +95,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: port,
-					base: ['.','/slides/','/pandoc/'],
+					base: ['.','/slides/'],
                     livereload: true,
                     open: true
 				}
