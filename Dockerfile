@@ -15,9 +15,12 @@ RUN apk add --no-cache --virtual build-essential \
     cd reveal.js && npm install &&\
     apk del build-essential
 
-RUN mkdir /slides &&\
-    mv /reveal.js/index.html /slides/index.html &&\
+COPY index.html /slides/
+
+RUN rm /reveal.js/index.html &&\
     ln -s /slides/index.html /reveal.js/index.html
+
+COPY Gruntfile.js /reveal.js/
 
 WORKDIR reveal.js
 CMD grunt serve
